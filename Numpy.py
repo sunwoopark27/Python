@@ -121,3 +121,10 @@ a_f = np.array(np.arange(1,7).reshape(2,-1), dtype='float64')
 print(a_f) # [[1. 2. 3.]
            #  [4. 5. 6.]]
 a_f.dtype  # dtype('float64')
+a.astype(np.float32) # array([[1., 2., 3.],
+                     #        [4., 5., 6.]], dtype=float32)
+np.int32(a_f)        # array([[1, 2, 3],
+                     #        [4, 5, 6]], dtype=int32)
+a.astype('int32')    # array([[1, 2, 3],
+                     #        [4, 5, 6]], dtype=int32)
+
