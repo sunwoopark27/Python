@@ -284,21 +284,60 @@ np.where(array%2==0, 'reserve','available')
 
 # 9-2. 난수 배열 생성 np.random
 
+# -- rand는 0과 1사이에서 난수 생성 --
 # numpy.random.rand(shape)
 # numpy.random.randint(low, high, size=shape)
 # numpy.random.normal(loc=평균, scale=표준편차, size=shape)
 
 np.random.rand()
+
+#### 1) numpy.random.rand(shape)
+
 np.random.rand(2,3) # size가 (2,3)인 행렬
 
 # 랜덤 시드 설정 (재현 가능성을 위해)
 np.random.seed(24)
+
 # 2x3x4 크기의 배열 생성
 # 2개의 "블록": [[ ... ]] 두 개.
 # 각 블록에는 3개의 "행".
 # 각 행에는 4개의 난수.
-# array = np.random.rand(2, 3, 4) 
+array = np.random.rand(2, 3, 4) 
 print(array)
+# 결과
+#array([[[0.15169108, 0.02158908, 0.33476293, 0.47580486],
+#        [0.84139183, 0.42119277, 0.53586629, 0.93188997],
+#        [0.19607132, 0.00137107, 0.80817883, 0.03800177]],
+
+#       [[0.49144389, 0.14264389, 0.44990434, 0.36686108],
+#        [0.02523468, 0.35343412, 0.22153686, 0.26543055],
+#        [0.50269416, 0.74898668, 0.85437948, 0.4210761 ]]])
+
+#### 2) numpy.random.randint(low, high, size=shape)
+# int 정수 값으로
+np.random.randint(30)
+
+# 1부터 30까지 (2,3) 사이즈로 랜덤 배열
+np.random.randint(1,30,size=(2,3))
+
+# 0부터 30까지 (2,3) 사이즈로 랜덤 배열
+np.random.randint(30,size=(2,3))
+
+#### 3) numpy.random.normal(loc=평균, scale=표준편차, size=shape)
+np.random.normal(0,1,size=(2,3))
+
+# 9-3. 통계함수
+# : 배열의 주어진 요소로부터, 최소, 최대, 백분위수, 표준편차, 분산 등을 찾는 통계함수가 존재
+#   axis옵션을 통해 연산 방향을 지정
+#   axis 지정이 안된 경우 모든 요소의 연산 결과가 반환
+#   axis=0 : 행과 행의 연산 결과를 반환
+#   axis=1 : 열과 열의 연산 결과를 반환
+
+array.min(), array.max()
+
+
+
+
 
 
 
