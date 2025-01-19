@@ -128,3 +128,116 @@ np.int32(a_f)        # array([[1, 2, 3],
 a.astype('int32')    # array([[1, 2, 3],
                      #        [4, 5, 6]], dtype=int32)
 
+# 6. Numpy Array 연산
+
+a = np.array([[1,2],[3,4]])
+b = np.array([[5,6],[7,8]])
+
+# 같은 자리끼리 더하기
+print(a+b)
+print(np.add(a,b))
+# 같은 자리끼리 빼기
+print(a-b)
+print(np.subtract(a,b))
+# 같은 자리끼리 곱하기
+print(a*b)
+print(np.multiply(a,b))
+# 같은 자리끼리 나누기
+print(a/b)
+print(np.divide(a,b))
+
+# 6-1. Array와 Scalar 연산(Broadcast)
+print(a + 2) # 각 원소에 2 더하기
+print(a - 2) # 각 원소에 2 빼기
+print(a * 2) # 각 원소에 2 곱하기
+print(a / 2) # 각 원소에 2 나누기
+
+# 6-2. Array와 Array 연산 (내적 연산, 행렬곱, 제곱근)
+
+print(a@b)                       # [[19 22] 
+print(np.matmul(a,b))            #  [43 50]]            
+print(np.dot(a,b))
+
+print(np.sqrt(a))                # [[1.         1.41421356]
+                                 #  [1.73205081 2.        ]]
+
+print(a**0.5)                    # [[1.         1.41421356]
+                                 #  [1.73205081 2.        ]]
+ 
+print(np.sqrt(a))                # [[1.         1.41421356]
+                                 #  [1.73205081 2.        ]]
+
+# 7. 인덱싱 : [행 인덱스, 열 인덱스]
+
+array = np.arange(9).reshape(3,3) # array([[0, 1, 2],
+                                  #        [3, 4, 5],
+                                  #        [6, 7, 8]])
+
+array[0] # array([0, 1, 2])
+array[0,0] # 0
+# -1은 마지막을 뜻함!
+array[-1,-1] # 8
+
+# 7-1. 조건 인덱싱
+# - Boolean Array를 이용하여 인덱싱하는 방법
+
+# array([[0, 1, 2],
+#        [3, 4, 5],
+#        [6, 7, 8]])
+
+# array 의 모양이 위와 같다고 할 때
+bidx = array % 2 == 0
+print(bidx)
+# [[ True False  True]
+#  [False  True False]
+#  [ True False  True]]
+
+array[bidx] # array([0, 2, 4, 6, 8])
+array[array % 2 ==0]  # array([0, 2, 4, 6, 8])
+array[array > 5] # array([6, 7, 8])
+
+# 7-2. 팬시 인덱싱(Fancy Indexing)
+#      다른 Array를 이용하여 인덱싱하는 방법
+#      선택하고자 하는 위치를 Array로 묶어서 데이터 접근 가능
+
+# array 설정
+# array([[0, 1, 2],
+#        [3, 4, 5],
+#        [6, 7, 8]])
+
+row = [0,1]
+col = [2,1]
+# array [[0,1],[2,1]]
+# 똑같은 위치의 값끼리 연결 되어 [0,2]와 [1,1]의 값을 가져와 저장
+a1 = array[row,col] # array([2, 4])
+# array[0,2]의 값을 10으로 변경
+array[0,2] = 10     # (array([[ 0,  1, 10],
+                    #         [ 3,  4,  5],
+                    #         [ 6,  7,  8]])
+
+# 8. Numpy Array 슬라이싱
+#  : 콜론(:) 을 사용하여 특정 범위의 값에 접근 가능
+
+# array([[0, 1, 2],
+#        [3, 4, 5],
+#        [6, 7, 8]])
+
+array[0,:]    # array[0,다] # array([0, 1, 2])
+array[:,1]    # array[다,1] # array([1, 4, 7])
+array[:2,1:]  # array[0~1행,1~끝 열] # array([[1, 2],
+                               #        [4, 5]])
+array[-1:,1:3] # -1은 마지막을 뜻함 : 뒤에 아무것도 오지 않아 끝을 지정하지 않았으므로 마지막만!
+               # array[마지막행,1~2열] # array([[7, 8]])
+
+
+
+
+
+
+
+
+
+
+
+
+
