@@ -334,10 +334,48 @@ np.random.normal(0,1,size=(2,3))
 #   axis=1 : 열과 열의 연산 결과를 반환
 
 array.min(), array.max()
+np.quantile(array,0.1)
+array.quantile(0.1)
+np.min(array)
+array.sum()
+array.mean()
+array.std()
+array.var()
+array.argmin()
+array.argmax())
+array.prod()
+array.cumsum()
+array.cumprod()
+array.sum()
+array.sum(axis=0)
+array.sum(axis=1)
+array.argmin(axis=1), array.argmax(axis=0)
 
+# 10. Numpy 입출력
+#  : Numpy 배열을 파일로 저장 또는 저장된 파일에서 Numpy배열을 불러올수 있음
+#    Numpy배열을 파일로 저장하기 위해 save savez 함수 이용
+#    파일에서 불러오기 위해 load 함수 이용
 
+# 문법
+numpy.save(<파일명>, array)
+numpy.savez(<파일명>, **arrays)
+numpy.load(<파일명>)
 
+array1 = np.arange(9).reshape(3,3)
+array2 = np.arange(4).reshape(2,2)
 
+np.save('array', array1)
+
+array = np.load('array.npy')
+array
+
+np.savez('arrayZip', array1, array2)
+arrayZip = np.load('arrayZip.npz')
+arrayZip  # NpzFile 'arrayZip.npz' with keys: arr_0, arr_1
+arrayZip['arr_0'] # 이렇게 해야 배열 array1 출력
+
+np.savez('arrayZip', array1=array1, array2=array2) # key 명을 지정해 줄 수도 있음
+arrayZip['array2']
 
 
 
