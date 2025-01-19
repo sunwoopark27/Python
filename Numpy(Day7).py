@@ -230,9 +230,75 @@ array[-1:,1:3] # -1은 마지막을 뜻함 : 뒤에 아무것도 오지 않아 �
                # array[마지막행,1~2열] # array([[7, 8]])
 
 
+# --- 슬라이싱 시 고려사항
+# Numpy는 다차원배열(ndarray)을 염두하고 설계되었기 때문에 데이터의 복사를 남발하지 않음
+# 원본 배열을 슬라이싱하여 새로운 배열을 만든 경우, 새로운 배열은 원본과 값을 공유하고 속성은 별도로 관리함
 
+# ** 슬라이싱한 새 배열 수정하면 원본 배열도 수정됨!!
+# 값을 복사하여 저장하고 싶은 경우 copy() 함수 이용
+# array([[0, 1, 2],
+#        [3, 4, 5],
+#        [6, 7, 8]])
 
+sliceA = array[:,1]    # array([1, 4, 7])
+id(array), id(sliceA)  # (134251804389328, 134251804392784) #둘이 다르다는 게 포인트
+np.shares_memory(array, sliceA) # True
 
+# slice 한 것을 변형해도 원본이 바뀐다!!
+sliceA[0] = 10 #array([[ 0, 10, 10],
+array          #       [ 3,  4,  5],
+               #       [ 6,  7,  8]])
+# 복사해서 사용
+copyA = array[:,1].copy()
+copyA          # array([1, 4, 7])
+
+# 변경해도 원본이 바뀌지 않음!!!!!!!!!
+copyA[0] = 1
+copyA
+
+# 9. Numpy 주요 함수
+# - np.where
+# - np.random
+# - 통계함수
+
+# 9-1. np.where(조건,[x,y]) ([x,y]생략가능)
+# : 조건을 만족하는 요소의 위치를 반환 (row, col) 형태로
+#   x, y를 지정하는 경우, 값이 대체된 배열을 반환
+#   - x : 요소의 조건이 True인 경우 지정할 값
+#   - y : 요소의 조건이 False인 겨우 지정할 값
+
+array = np.array([[1, 2, 3], 
+                  [4, 5, 6], 
+                  [7, 8, 9]])
+indices = np.where(array % 2 == 0)
+print(indices)                       
+# (array([0, 1, 1]), array([1, 0, 2]))
+# 짝수는 2, 4, 6 으로 array[0, 1] = 2 / array[1, 0] = 4 / array[1, 2] = 6
+
+# 응용 : 배열 생성
+values = array[np.where(array % 2 == 0)]
+print(values)                            # [2,4,6]
+
+# 2로 나눠 나머지가 0인 것은 'reserve' 아닌 것은 'available'
+np.where(array%2==0, 'reserve','available')
+
+# 9-2. 난수 배열 생성 np.random
+
+# numpy.random.rand(shape)
+# numpy.random.randint(low, high, size=shape)
+# numpy.random.normal(loc=평균, scale=표준편차, size=shape)
+
+np.random.rand()
+np.random.rand(2,3) # size가 (2,3)인 행렬
+
+# 랜덤 시드 설정 (재현 가능성을 위해)
+np.random.seed(24)
+# 2x3x4 크기의 배열 생성
+# 2개의 "블록": [[ ... ]] 두 개.
+# 각 블록에는 3개의 "행".
+# 각 행에는 4개의 난수.
+# array = np.random.rand(2, 3, 4) 
+print(array)
 
 
 
