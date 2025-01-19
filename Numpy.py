@@ -30,3 +30,28 @@ np.array([[1,2,3],
 np.arange(10) # array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 np.arange(0.1, 1.1, 0.1) # array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
 
+# 3. linspace 함수를 이용한 배열 생성
+# : 수의 범위를 균일하게 나누고자 할 때 사용
+# 문법
+# numpy.linspace(start, stop, num(몇개))
+
+np.linespace(1,10,3) # array([ 1. ,  5.5, 10. ])
+
+# 4. 기타 함수를 이용한 배열 생성
+# ones(shape) : 1로 채워진 배열
+# zeros(shape) : 0으로 채워진 배열
+# full(shape,value) : value로 채워진 배열
+# eye(N),indentity(N) : N차원 단위행렬
+
+np.ones((2))          # array([1., 1.])
+np.ones((2,2))        # array([[1., 1.],
+                      #        [1., 1.]])
+np.zeros((2,2))       # array([[0., 0.],
+                      #        [0., 0.]])
+np.full((2,2), -1)    # array([[-1, -1],
+                      #        [-1, -1]])
+np.eye(3)             # array([[1., 0., 0.],
+                      #        [0., 1., 0.],
+                      #        [0., 0., 1.]])
+
+#
