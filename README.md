@@ -22,6 +22,6 @@ jupiter Notebook 설치하고 launch 까지 함
 4. 그러면 바로 자동으로 chrome 켜지고 local host:8888/tree 로 켜짐
 내 컴퓨터에 있는 파일들이 다 나오고 그 중에서 저장하고 싶은 곳 파일에서 new 하면 새로운 파일 '.ipnyb' 생김
 
-다시 anaconda 로 돌아와서 home 화면 pycharm professional install 누름
+5. 다시 anaconda 로 돌아와서 home 화면 pycharm professional install 누름
 professional은 돈을 지불해야하지 그 설치 사이트에서 pycharm community 버전 찾아서 설치하기
 
