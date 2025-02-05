@@ -1,0 +1,21 @@
+{
+    "NewAddressListResponse": {
+        "cmmMsgHeader": {
+            "requestMsgId": null,
+            "responseMsgId": null,
+            "responseTime": "20250205:17294090",
+            "successYN": "Y",
+            "returnCode": "00",
+            "errMsg": null,
+            "totalCount": "1",
+            "countPerPage": "10",
+            "totalPage": "1",
+            "currentPage": null
+        },
+        "newAddressListAreaCd": {
+            "zipNo": "61725",
+            "lnmAdres": "광주광역시 남구 서문대로 745 (주월동, 빅스포)",
+            "rnAdres": "광주광역시 남구 주월동 408-1 빅스포"
+        }
+    }
+}
