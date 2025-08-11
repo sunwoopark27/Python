@@ -24,4 +24,3 @@ jupiter Notebook 설치하고 launch 까지 함
 
 5. 다시 anaconda 로 돌아와서 home 화면 pycharm professional install 누름
 professional은 돈을 지불해야하지 그 설치 사이트에서 pycharm community 버전 찾아서 설치하기
-
