@@ -1,6 +1,6 @@
 # Python
 
-anaconda 설치
+anaconda 설치방법
 
 1. 왼쪽 메뉴에  environments -> base(root) 옆에 패키지 install 되어있는 것 수 있음!
                        ->  맨 밑 왼쪽 create 눌러서 DBA4 python만 체크해서 새로운 애 만들기!
