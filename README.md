@@ -5,7 +5,7 @@ ANACONDA
 1. 왼쪽 메뉴에  environments -> base(root) 옆에 패키지 install 되어있는 것 수 있음!
                        ->  맨 밑 왼쪽 create 눌러서 DBA4 python만 체크해서 새로운 애 만들기!
 
-+ create DBA4  만들고 python만 체크! r은 x
++ create DBA4  만들고 python만 체크! <br> r은 x
   base 바로 밑에 DBA4 생김!
 
 2. 옆에 install 된 항목들 위에 installed 말고 바 내려서 not installed로 바꿈
